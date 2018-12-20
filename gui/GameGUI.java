@@ -47,16 +47,17 @@ public class GameGUI extends JFrame implements ActionListener{
 
 		// setup gridPanel
 		gridPanelSetup();
-		setLayout(new GridLayout(1,1));
-		add(gridPanel);
 
 		//format JFrame
 		setLayout(new BorderLayout());
 		add(infoPanel, BorderLayout.EAST);
 		add(gridPanel, BorderLayout.CENTER);
+		
+		infoPanel.setPreferredSize(new Dimension(500,900));
+		gridPanel.setPreferredSize(new Dimension(900,900));
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setPreferredSize(new Dimension(1100,900));
+
 		pack();
 		setVisible(true);
 	}
@@ -160,6 +161,9 @@ public class GameGUI extends JFrame implements ActionListener{
 		//method to display current state of game
 		for(int r=0;r<8;r++) {
 			for(int c=0;c<8;c++) {
+				if((mostRecentState[r][c]!=null)&&(!mostRecentState[r][c].getAlive())){
+					mostRecentState[r][c] =null;
+				}
 				if (mostRecentState[r][c] instanceof Prince) {
 					//paste "stretchy" image of enemy
 					tileButton[r][c].setIcon(new StretchIcon("src/pictures/princeImage.png"));
@@ -273,7 +277,7 @@ public class GameGUI extends JFrame implements ActionListener{
 			String gameOverText = "<html>You were killed ...<br>"
 					+ "With your death, your retainers lost their will to fight and they died at the hand of the bandits as well. <br>"
 					+ "The bandits massacred everyone else that was left in the camp and ran away with the envoy.<br>"
-					+ "After a week, a travelling merchant discovered the mutilated body of the envoy in a ditch by the road.<br>"
+					+ "After a week, a travelling salesman discovered the mutilated body of the envoy in a ditch by the road.<br>"
 					+ "A war that would last longer than any war previously, erupted between the two countries ...<html/>";	
 			label = new JLabel(gameOverText);
 
@@ -289,7 +293,7 @@ public class GameGUI extends JFrame implements ActionListener{
 			String gameOverText = "<html> You were too late...<br>"
 					+ "The bandits escaped with the envoy. No one was able to pursue them due to their wounds.<br>"
 					+ "The next day, a search party combed the area, but to no avail. <br>"
-					+ "After a week, a travelling merchant discovered the mutilated body of the envoy in a ditch by the road.<br>"
+					+ "After a week, a travelling salesman discovered the mutilated body of the envoy in a ditch by the road.<br>"
 					+ "A war that would last longer than any war previously, erupted between the two countries ...<html/>";
 			label = new JLabel(gameOverText);
 
