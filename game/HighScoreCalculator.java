@@ -26,7 +26,6 @@ public class HighScoreCalculator {
 			highScore = tempHighScore*3;
 			break;
 		}
-		
 	}
 	
 	//give Score

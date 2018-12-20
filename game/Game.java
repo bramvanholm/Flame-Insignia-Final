@@ -15,7 +15,7 @@ public class Game {
 	public IntroGUI myIntroGUI; // graphic user interface for introduction of game
 	public boolean endPointReached=false; //game variables indicating end x2
 	public boolean deadPrince=false;
-	public int turnsLeft = 20; //game turns left
+	public int turnsLeft = 15; //game turns left
 	public String gameOverString;
 	public ArrayList<Unit> allUnits = new ArrayList<Unit>();
 	public String[] gameParameters = new String[2];
@@ -38,7 +38,7 @@ public class Game {
 		Enemy bandit2 = new Enemy("Bandit",13,65,7,4);
 		Enemy bandit3 = new Enemy("Bandit",13,65,7,4);
 		Enemy bandit4 = new Enemy("Bandit",13,65,7,4);
-		Boss boss = new Boss("Boss",21,75,8,4);
+		Boss boss = new Boss("Boss",21,70,8,4);
 
 		//add all units to list for GUI display of statistics
 		allUnits.add(prince);
@@ -69,7 +69,7 @@ public class Game {
 		tempSetting[enemyCoord[3][0]][enemyCoord[3][1]]=bandit4;
 		tempSetting[bossCoord[0]][bossCoord[1]]=boss;
 
-		//set class state accordingly
+		//set instance state accordingly
 		this.state= tempSetting;
 	}
 
@@ -193,7 +193,7 @@ public class Game {
 		}
 	}
 
-	//return unit statistics for GUI display
+	//to return the amount of allies left at the end of the game
 	public int endGameAllies() {
 		int sum=0;
 		for(int r=0;r<8;r++) {

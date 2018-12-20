@@ -28,14 +28,16 @@ public class EnemyTurn {
 			newPlace(i);
 			//update enemy statistics
 			updateStats(i);
+			//update GUI stats
+			currentGame.updateGUIStats();
 			//possible enemy attack
 			attack(i);
-			//small pause for oversight 
-			currentGame.pause(500);
 			//update GUI stats
 			currentGame.updateGUIStats();
 			//update graphic GUI
 			currentGame.updateGUI();
+			//small pause for oversight 
+			currentGame.pause(500);
 		}
 	}
 	
@@ -110,7 +112,7 @@ public class EnemyTurn {
 		if(!(attackCoordinates.length==0)) {
 			combat.performCombat(enemies.get(i), currentGame.returnUnit(attackCoordinates), "enemies");
 		} else {
-			System.out.println("enemy can't attack");
+			;
 		}
 	}
 	

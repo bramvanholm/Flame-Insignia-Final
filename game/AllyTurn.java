@@ -22,14 +22,15 @@ public class AllyTurn {
 	//start the ally turn
 	public void start() {
 		
-		//reset selected buttons
-		currentGame.myGui.pressedButton=false;
-		
 		for(int i=0;(i<allies.size())&&(currentGame.princeLives())&&(!currentGame.endPointReached());i++) {
+			//reset selected buttons
+			currentGame.myGui.pressedButton=false;
 			//new place for ally
 			step(i);
 			//update ally statistics
 			updateStats(i);
+			//update GUI stats
+			currentGame.updateGUIStats();
 			//possible ally attack
 			attack(i);
 			//update GUI stats
@@ -105,9 +106,9 @@ public class AllyTurn {
 					currentGame.pause(10);
 					coordinatesAttack=currentGame.myGui.indexPressedButton;
 			}
-			combat.performCombat(allies.get(index), currentGame.returnUnit(coordinatesAttack), "allies");
+			combat.performCombat(allies.get(index), currentGame.returnUnit(coordinatesAttack), "Allies");
 		} else {
-			System.out.println("ally can't attack!");
+			;
 		}
 	}
 	//Update the amount of turns left on the game GUI

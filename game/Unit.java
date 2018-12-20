@@ -99,13 +99,8 @@ public abstract class Unit {
 		}
 		this.unitHp=Math.max(0,currentHp-damage);
 	}
-	public void updateEva(int extra) {
-		int currentEva=getEva();
-		if(extra==0) {
-			setEva(currentEva+extra);
-		} else {
-			setEva(0);
-		}
+	public void updateEva(int newEVA) {
+		this.setEva(newEVA);
 	}
 	public void letUnitDie() {
 		this.unitAlive=false;
