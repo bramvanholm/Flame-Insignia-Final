@@ -34,11 +34,11 @@ public class Game {
 		Prince prince = new Prince("Prince",25,75,8,4);
 		Ally guard1 = new Ally("Guard",22,75,8,4);
 		Ally guard2 = new Ally("Retainer",22,75,8,4);
-		Enemy bandit1 = new Enemy("Bandit",13,65,7,4);
-		Enemy bandit2 = new Enemy("Bandit",13,65,7,4);
-		Enemy bandit3 = new Enemy("Bandit",13,65,7,4);
-		Enemy bandit4 = new Enemy("Bandit",13,65,7,4);
-		Boss boss = new Boss("Boss",21,70,8,4);
+		Enemy bandit1 = new Enemy("Bandit",14,70,7,4);
+		Enemy bandit2 = new Enemy("Bandit",14,70,7,4);
+		Enemy bandit3 = new Enemy("Bandit",14,70,7,4);
+		Enemy bandit4 = new Enemy("Bandit",14,70,7,4);
+		Boss boss = new Boss("Boss",26,70,8,4);
 
 		//add all units to list for GUI display of statistics
 		allUnits.add(prince);
@@ -95,12 +95,12 @@ public class Game {
 		case "Easy":
 			break;
 		case "Standard": 
-			setEnemyStats(15,8, allUnits.get(3),allUnits.get(4),allUnits.get(5),allUnits.get(6));
-			setEnemyStats(25,9,allUnits.get(7));
+			setEnemyStats(18,8, allUnits.get(3),allUnits.get(4),allUnits.get(5),allUnits.get(6));
+			setEnemyStats(32,9,allUnits.get(7));
 			break;
 		case "Hard":
-			setEnemyStats(18,9,allUnits.get(3),allUnits.get(4),allUnits.get(5),allUnits.get(6));
-			setEnemyStats(30,10,allUnits.get(7));
+			setEnemyStats(22,9,allUnits.get(3),allUnits.get(4),allUnits.get(5),allUnits.get(6));
+			setEnemyStats(36,10,allUnits.get(7));
 			break;
 		}
 

@@ -13,17 +13,17 @@ public class HighScoreCalculator {
 	public HighScoreCalculator (int allies, int turns, String difficulty) {
 		
 		//local variables
-		int tempHighScore = allies*150 + turns*100;
+		int tempHighScore = allies*150 + turns*50;
 		
 		switch(difficulty){
 		case "Easy":
 			highScore=tempHighScore;
 			break;
 		case "Standard":
-			highScore = tempHighScore*2;
+			highScore = (tempHighScore+150)*2;
 			break;
 		case "Hard":
-			highScore = tempHighScore*3;
+			highScore = (tempHighScore+300)*4;
 			break;
 		}
 	}

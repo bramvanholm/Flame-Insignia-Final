@@ -106,7 +106,7 @@ public abstract class Unit {
 		this.unitAlive=false;
 	}
 	
-	// information parsers
+	//To get several statistics in a string for the GameGUI
 	public String getInfo() {
 		return this.getName() +"   HP "+ getHp()+"/"+getMaxHp();
 	}

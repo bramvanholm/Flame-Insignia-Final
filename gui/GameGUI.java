@@ -68,7 +68,7 @@ public class GameGUI extends JFrame implements ActionListener{
 		//clear info panel
 		infoPanel.removeAll();
 		//Showing the amount of turns left to win
-		JLabel turn = new JLabel("Turns left: " +turns);
+		JLabel turn = new JLabel("Rescue the Envoy!          Turns left: " +turns);
 		turn.setFont(font);
 		turn.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 		this.infoPanel.add(turn);
